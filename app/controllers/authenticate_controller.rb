@@ -9,7 +9,7 @@ class AuthenticateController < ApplicationController
                 token= createToken(@user)
                 render json: {
                     token: token,
-                    favoritemaps: @user.favoritemaps
+                    results: @user.results
                 }
             else
                 render json: {message: "Wrong Password"}, status: :unauthorized

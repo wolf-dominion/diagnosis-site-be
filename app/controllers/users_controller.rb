@@ -22,7 +22,7 @@ class UsersController < ApplicationController
                 token: token
             }
         else
-            render json: { message: @user.errors.messages }
+            render json: { message: 1 }
         end
     end
 
