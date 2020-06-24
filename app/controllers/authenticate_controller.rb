@@ -9,6 +9,7 @@ class AuthenticateController < ApplicationController
                 token= createToken(@user)
                 render json: {
                     token: token,
+                    username: @user.username,
                     results: @user.results
                 }
             else

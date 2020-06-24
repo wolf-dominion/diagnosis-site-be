@@ -7,12 +7,12 @@ class ResultsController < ApplicationController
         # @fms = Favoritemap.all
         # render json: @fms
         @results = Result.where(user_id: @user_id)
-        render json: @results
+        render json: {user_id: @user_id, results: @results}
     end
 
     def show
         @results = Result.where(user_id: params[:id])
-        render json: @results
+        render json: {user_id: @user_id, results: @results}
     end
 
     def create
