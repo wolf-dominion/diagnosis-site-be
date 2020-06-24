@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :authenticate, only: [:index, :show]
+    before_action :authenticate, only: [:index, :show, :update, :destroy]
 
     def index
         @users = User.all
@@ -33,6 +33,12 @@ class UsersController < ApplicationController
         else
             render json: {message: "Could not update"}
         end
+    end
+
+    def destroy
+        @user = User.find(params[:id])
+        @user.destroy
+        render json: {message: "user deleted"}
     end
 
     private

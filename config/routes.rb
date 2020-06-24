@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :results
-  resources :users, only: [:index, :show, :create, :update, :delete] do
+  resources :users do
     resources :results
   end
 
