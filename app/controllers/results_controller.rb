@@ -14,7 +14,7 @@ class ResultsController < ApplicationController
     end
 
     def create
-        @result = Result.create(fm_params)
+        @result = Result.create(result_params)
         render json: @result
     end
     
