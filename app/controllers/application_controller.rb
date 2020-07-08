@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::API
 
     def secret
-        # first option is for if this app is deployed/production, 2nd is for dev
-        process.env.SECRET_KEY_BASE || Rails.application.secrets.secret_key_base 
+        # 2nd option is for if this app is deployed/production, 1st is for dev
+        Rails.application.secrets.secret_key_base || process.env.SECRET_KEY_BASE
     end
 
     def authenticate
